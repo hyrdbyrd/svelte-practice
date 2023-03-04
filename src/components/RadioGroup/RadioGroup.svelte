@@ -10,8 +10,10 @@
 <script lang="ts">
     import Radio from "../Radio/Radio.svelte";
 
-    export let values: any[] = [];
-    export let checked: any = values[0];
+    type T = $$Generic;
+
+    export let values: T[] = [];
+    export let checked: T = values[0];
 </script>
 
 <div>

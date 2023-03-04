@@ -1,8 +1,10 @@
 <script lang="ts">
     import { scale } from 'svelte/transition';
 
-    export let value: any;
-    export let checked: any;
+    type T = $$Generic;
+
+    export let value: T;
+    export let checked: T;
 </script>
 
 <style>

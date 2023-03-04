@@ -3,12 +3,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		margin-top: 20px;
 	}
 
 	.container {
 		width: 100%;
 		max-width: 100vw;
-		overflow-x: hiddne;
+		overflow-x: hidden;
 	}
 
 	.list {
@@ -48,14 +50,16 @@
 	const prev = stepTo(-1);
 </script>
 
-<div class="container">
-	<div bind:this={list} class="list" style:transform="translate(-{checked * 100}%)">
-		<slot />
+<div>
+	<div class="container">
+		<div bind:this={list} class="list" style:transform="translate(-{checked * 100}%)">
+			<slot />
+		</div>
 	</div>
-</div>
 
-<nav>
-	<Button on:click={prev}>Left</Button>
-	<RadioGroup values={[...items.keys()]} bind:checked />
-	<Button on:click={next}>Right</Button>
-</nav>
+	<nav>
+		<Button on:click={prev}>Left</Button>
+		<RadioGroup values={[...items.keys()]} bind:checked />
+		<Button on:click={next}>Right</Button>
+	</nav>
+</div>
